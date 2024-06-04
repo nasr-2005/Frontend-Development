@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body
+{
+    background-color: #991;
+    width:100%;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img
+{
+    width:150px;
+    height:150px;
+    margin: 15px;
+    transition:all 0.8s linear;
+/* border:solid #000 0.01px; */
+}
+.hover:hover
+{
+    width:120px;
+    height:120px;
+    transform: rotate(10deg);
+    border-radius: 20px;
+    cursor:pointer;
+}
+@media(max-width:750px){
+
+img
+{
+    width:120px;
+    height:120px;
+    margin: 10px;
+}
+}
+.full-img{
+width:100%;
+height:100vh;
+background-color: #3333339f;
+position:fixed;
+top:0;
+left:0;
+display: none;
+justify-content: center;
+align-items: center;
+z-index:1;
+}
+span{
+position: absolute;
+top:10%;
+right:10%;
+color:white;
+cursor:pointer;
+font-size: 20px;
+}
+.full-img img{
+    width:90%;
+    height:60%;
+    max-width:300px;
+    
+}
+</style>
+</head>
+<body>
+ <div class="full-img" id="fullimgbox">
+
+    <img src="Don1.jpg" id="fullimg" >
+    <span id="close" onclick="closeImg()">X</span>
+    
+</div>
+
+<div class="images">
+    <img class="hover" src="Don1.jpg" title="CR7" onclick="openImg(this.src)">
+    <img  class="hover" src="Don2.jpg" title="CR7" onclick="openImg(this.src)">
+    <img class="hover" src="Don3.jpg" title="CR7" onclick="openImg(this.src)">
+    <img class="hover" src="Don4.jpg" title="CR7" onclick="openImg(this.src)">
+    <br>
+    <img class="hover" src="Don5.jpg" title="CR7" onclick="openImg(this.src)">
+    <img class="hover" src="Don6.jpg" title="CR7" onclick="openImg(this.src)">
+    <img class="hover" src="Don7.jpg" title="CR7" onclick="openImg(this.src)">
+    <img class="hover" src="Don8.jpg" title="CR7" onclick="openImg(this.src)">
+</div>
+
+<script>
+ let fullimgbox=document.getElementById("fullimgbox");
+ let fullimg=document.getElementById("fullimg");
+function openImg(src){
+    fullimgbox.style.display="flex";
+fullimg.src=src;
+}
+let close=document.getElementById("close");
+function closeImg(){
+    fullimgbox.style.display="none";
+
+}
+
+
+
+</script>
+
+</body>
+</html>
